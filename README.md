@@ -1,5 +1,3 @@
 # Morty-express
-A place for Rick things.
 
-
-So should we delete this repo? No longer need it right?
+A repo used as a self-exercise for learning about Git and GitHub
