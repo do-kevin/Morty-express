@@ -1,3 +1,3 @@
-# Morty-express
+# React Rescripts Ant Design Starter Kit
 
-A repo used as a self-exercise for learning about Git and GitHub
+A template repository
