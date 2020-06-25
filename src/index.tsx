@@ -5,7 +5,7 @@ import App from 'App';
 import * as serviceWorker from './serviceWorker';
 import './index.scss';
 
-const render = (Component: any) => {
+const render = (Component: React.Component | any) => {
   Component = hot(Component);
   return ReactDOM.render(
     <React.StrictMode>

@@ -10,6 +10,7 @@ logConfig.isMiddleware = true;
 
 module.exports = [
   'env',
+  ['use-postcss-config'],
   {
     webpack: (config) => {
       if (config.mode === 'production') {

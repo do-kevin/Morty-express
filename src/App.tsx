@@ -1,26 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.scss';
+import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import { Result, Button } from 'antd';
+import styled from 'styled-components';
+import Home from 'screens/Home';
+
+const StyledResult = styled(Result)`
+  .ant-result-title,
+  .ant-result-subtitle {
+    color: white;
+  }
+`;
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route
+            component={() => (
+              <StyledResult
+                status="404"
+                title="404"
+                subTitle="Sorry, the page you visited does not exist."
+                extra={
+                  <Button className="rounded" size="small" type="primary">
+                    <Link to="/">Return home</Link>
+                  </Button>
+                }
+              />
+            )}
+          />
+        </Switch>
+      </Router>
     );
   }
 }

@@ -1,6 +1,7 @@
 {
   "presets": ["react-app", ["@babel/env", { "targets": { "node": 6 } }]],
   "plugins": [
+    ["babel-plugin-styled-components"],
     "lodash",
     [
       "react-hot-loader/babel",
@@ -13,7 +14,7 @@
       {
         "libraryName": "antd",
         "libraryDirectory": "es",
-        "style": true
+        "style": "css"
       },
       "antd"
     ]

@@ -1,4 +1,8 @@
+@import '~tailwindcss/dist/components.min.css';
+@import '~tailwindcss/dist/utilities.min.css';
 @import '~antd/dist/antd.min.css';
+
+$bgGray900: rgb(26, 32, 44);
 
 body {
   margin: 0;
@@ -7,6 +11,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+  background-color: $bgGray900;
 }
 
 code {
