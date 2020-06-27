@@ -1,4 +1,4 @@
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
@@ -16,10 +16,10 @@ module.exports = [
       if (config.mode === 'production') {
         config.plugins = [
           ...config.plugins,
-          new BundleAnalyzerPlugin({
-            analyzerMode: 'static',
-            reportFilename: 'analyzed-bundle.html',
-          }),
+          // new BundleAnalyzerPlugin({
+          //   analyzerMode: 'static',
+          //   reportFilename: 'analyzed-bundle.html',
+          // }),
         ];
       }
 
