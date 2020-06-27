@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Layout, Row, Card, Button } from 'antd';
+import { Layout, Row, Card } from 'antd';
 import styled from 'styled-components';
 import { uniqueId } from 'lodash';
 import logo from 'logo.svg';
@@ -8,6 +8,10 @@ import libraries from 'libraries.json';
 
 const { Content, Header } = Layout;
 const { Meta } = Card;
+
+const LinkButton = styled.a`
+  background-color: rgb(24, 144, 255);
+`;
 
 const LibraryCard = styled.div`
   .libraryCard {
@@ -121,15 +125,14 @@ class Home extends Component {
                           title={l.name}
                           style={{ marginBottom: '0.5rem' }}
                         />
-                        <a
+                        <LinkButton
+                          className="hover:bg-blue-600 text-white hover:text-white font-bold py-2 px-4 rounded w-full block text-center"
                           href={l.link}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <Button className="w-full" type="primary">
-                            Link
-                          </Button>
-                        </a>
+                          Link
+                        </LinkButton>
                       </div>
                     </Card>
                   </LibraryCard>

@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { Link, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import { Result, Button } from 'antd';
+import { Button } from 'antd';
 import styled from 'styled-components';
-import Home from 'screens/Home';
+import { imported } from 'react-imported-component/macro';
+
+const Home = imported(() => import('screens/Home'));
+const Result = imported(() => import('antd/lib/result'));
+const Dashboard = imported(() => import('screens/Dashboard'));
 
 const StyledResult = styled(Result)`
   .ant-result-title,
@@ -17,6 +21,7 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/dashboard" component={Dashboard} />
           <Route
             component={() => (
               <StyledResult
