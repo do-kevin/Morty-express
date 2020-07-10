@@ -23,9 +23,12 @@ module.exports = [
         ];
       }
 
+      if (config.mode === 'development') {
+        config.plugins = [...config.plugins, new ReactRefreshWebpackPlugin()];
+      }
+
       config.plugins = [
         ...config.plugins,
-        config.mode === 'development' ? new ReactRefreshWebpackPlugin() : null,
         new AntdDayjsWebpackPlugin(),
         new LodashModuleReplacementPlugin({
           shorthands: true,
