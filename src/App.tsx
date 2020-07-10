@@ -17,8 +17,11 @@ const StyledResult = styled(Result)`
 
 class App extends Component {
   render() {
+    // Checks if homepage in package.json exists
+    const basename = process.env.PUBLIC_URL || undefined;
+
     return (
-      <Router>
+      <Router basename={basename}>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/dashboard" component={Dashboard} />
