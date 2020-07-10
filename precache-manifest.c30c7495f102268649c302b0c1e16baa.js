@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b7788d7b9bfd399a17ef55cd2ae3150a",
+    "revision": "70548ef9aa1be562608fa6ca69b2a210",
     "url": "/react-rescripts-antd-starter-kit/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-rescripts-antd-starter-kit/static/css/3.98904529.chunk.css"
   },
   {
-    "revision": "2e0db53141402c416dce",
+    "revision": "1df0f5190fa82e8d2fba",
     "url": "/react-rescripts-antd-starter-kit/static/css/main.5bb9c07f.chunk.css"
   },
   {
@@ -48,8 +48,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-rescripts-antd-starter-kit/static/js/8.e9e661ad.chunk.js"
   },
   {
-    "revision": "2e0db53141402c416dce",
-    "url": "/react-rescripts-antd-starter-kit/static/js/main.1871ef4a.chunk.js"
+    "revision": "1df0f5190fa82e8d2fba",
+    "url": "/react-rescripts-antd-starter-kit/static/js/main.3546048e.chunk.js"
   },
   {
     "revision": "2b1626b7ae7fdaef777b",
