@@ -1,4 +1,4 @@
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
@@ -25,6 +25,7 @@ module.exports = [
 
       config.plugins = [
         ...config.plugins,
+        config.mode === 'development' ? new ReactRefreshWebpackPlugin() : null,
         new AntdDayjsWebpackPlugin(),
         new LodashModuleReplacementPlugin({
           shorthands: true,
@@ -33,13 +34,6 @@ module.exports = [
           cloning: true,
         }),
       ];
-
-      config.entry = [...config.entry, 'react-hot-loader/patch', './src'];
-
-      config.resolve.alias = {
-        ...config.resolve.alias,
-        'react-dom': '@hot-loader/react-dom',
-      };
 
       return config;
     },
