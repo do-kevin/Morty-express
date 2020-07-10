@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { hot } from 'react-hot-loader/root';
 import App from 'App';
 import * as serviceWorker from './serviceWorker';
 import './index.scss';
 
 const render = (Component: React.Component | any) => {
-  Component = hot(Component);
   return ReactDOM.render(
     <React.StrictMode>
       <Component />

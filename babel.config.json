@@ -4,12 +4,6 @@
     ["babel-plugin-styled-components"],
     "lodash",
     [
-      "react-hot-loader/babel",
-      {
-        "safetyNet": true
-      }
-    ],
-    [
       "imports",
       {
         "libraryName": "antd",
