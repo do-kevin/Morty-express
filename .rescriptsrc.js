@@ -1,6 +1,7 @@
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const logConfig = (config) => {
   return config;
@@ -13,18 +14,26 @@ module.exports = [
   ['use-postcss-config'],
   {
     webpack: (config) => {
+      config.optimization = {
+        ...config.optimization,
+        usedExports: true,
+      };
+
       if (config.mode === 'production') {
         config.plugins = [
           ...config.plugins,
-          // new BundleAnalyzerPlugin({
-          //   analyzerMode: 'static',
-          //   reportFilename: 'analyzed-bundle.html',
-          // }),
+          new BundleAnalyzerPlugin({
+            analyzerMode: 'static',
+            reportFilename: 'report.html',
+          }),
         ];
       }
 
       if (config.mode === 'development') {
-        config.plugins = [...config.plugins, new ReactRefreshWebpackPlugin()];
+        config.plugins = [
+          ...config.plugins,
+          config.mode === 'development' && new ReactRefreshWebpackPlugin(),
+        ];
       }
 
       config.plugins = [
